@@ -1,0 +1,239 @@
+body {
+	margin: 0;
+	font-family: 'Josefin Sans',sans-serif !important;
+	line-height : 1.5;
+	overflow-x: hidden;
+	margin-bottom: calc(60px + 8px); /* Adjust this value based on the height of your footer and padding */
+}
+
+/* login page */
+.login-container {
+	text-align: center;
+  }
+
+/*===========================================
+  CSS for header in every page
+  !*Specify your own banner image
+===========================================*/
+.header {
+	background: black ;
+    height: 100px;
+    text-align: center;
+	color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+/*===========================================
+  CSS for footer in every page
+===========================================*/ 
+footer {
+    background-color: #333; /* Set your preferred background color */
+    color: white; /* color of font*/
+    text-align: center;
+	font-family: 'josefin sans' !important;
+    font-size: 15px;
+    padding: 8px 0;
+    position: fixed; /* Use position: fixed; for a footer at the bottom of the viewport */
+    bottom: 0;
+    width: 100%; /* Make the footer take the full width of the viewport */
+}
+
+
+h1 {
+    font-size: 65px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: auto;
+}
+
+/*===========================================
+  CSS for table
+===========================================*/
+th{
+	text-align: left;
+}
+
+td {
+	padding: 12px; /* Adjust the padding to increase spacing */
+}
+
+/*===========================================
+  CSS used for responsive div in index.html
+  using flex.
+===========================================*/
+.row {
+	display: flex;
+	flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.col-left {	
+	text-align: center; 
+	flex: 40%;
+	padding: 15px;
+}
+.col-right {	
+	flex: 60%; 
+	padding: 15px;
+}
+.logout{
+	float: right;
+}
+/*===========================================*/
+
+/*===========================================
+  CSS for image (profile photo) in index.php
+=============================================*/		
+.image {
+    height: 366px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: auto;
+    margin-top: 30px; 
+}
+
+/*===========================================
+  CSS for menu in every page
+===========================================*/
+.topnav {
+	overflow: hidden;
+	background-color: #292929;
+}
+
+.topnav a {
+	float: left;
+	display: block;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+.topnav a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+.topnav .navbar-brand:hover {
+    /* Reset the hover effect for the logo */
+    background-color: initial;
+    color: whitesmoke;
+  }
+  
+.topnav a.active {
+	background-color: #ffa31a;
+	color: black;
+}
+
+.topnav .icon {
+	display: none;
+}
+
+/*===========================================*/
+
+/*===========================================
+  CSS  for style table as in Lab02
+  - using id
+===========================================*/
+#projectable {
+	border-collapse: collapse;
+	width: 100%;
+	padding-left: 30px;
+}
+#projectable td, #projectable th {
+	border: 1px solid #616161;
+	padding: 8px;
+}
+#projectable tr:nth-child(even){background-color: #ddd;}
+#projectable tr:hover {background-color: #C8B4BA;}
+#projectable th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #4CAF50;
+	color: black;
+}
+#projectable td {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	color: black;
+}
+table#projectable td {
+	white-space: normal; /* This is what makes text wrap */
+}
+
+/*===========================================
+  CSS when pages are resized to smaller or 
+  for mobile screen, modify the max-width
+===========================================*/
+@media screen and (max-width: 750px) {
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+    
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
+
+@media (max-width: 786px) {
+    .header {
+        height: 256px;
+    }
+
+    .image {
+		height:auto;
+        display: block;
+        width: 30%; /* Set the image to 30% width */
+        margin: 0 auto; /* Center the image horizontally */
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    .row {
+        /* Stack elements vertically on smaller screens */
+		--bs-gutter-x: 0rem;
+        flex-direction: column;
+        width: 95%;
+    }
+
+    [class*="col-"] {
+        /* Reset the flex property to prevent stretching */
+        flex: none;
+        width: 100%;
+    }
+
+    #challengeDiv table {
+        width: 100%;
+    }
+}
